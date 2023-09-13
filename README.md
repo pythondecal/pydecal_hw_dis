@@ -1,4 +1,5 @@
 # pydecal_hw_dis
+
 Homework and Discussions for the Python DeCal Fall 2023
 
 HW 1: Command Line/Scripts\
