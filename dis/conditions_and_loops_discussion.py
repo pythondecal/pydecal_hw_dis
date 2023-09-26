@@ -19,11 +19,12 @@ Let's do a quick review!
 
 ### This is the syntax of a while-loop ###
 
-#while condition == true:
+#while condition:
   # Code block to be executed
 
 
-# Note: It is normal to forget the syntax! That is why google is your bff and you just need to google "for loop syntax" or "while loop syntax"
+# Note: It is normal to forget the syntax! That is why google is your bff and you 
+# just need to google "for loop syntax" or "while loop syntax"
 # and there are tons of resources. I usually just go to images to quickly check the syntax.
 
 """### Problem 1: Your turn!
@@ -32,13 +33,18 @@ Print i 10 times using both a for and while loop.
 """
 
 # use a for loop here:
-
+# for i in range(0,10):
+#     print("i")
 # use a while loop:
-
+# i=0
+# while(i<10):
+#     print('i')
+#     i+=1
 """###Problem 2: Range()
 Range is a cool function but there are a lot of parts to it so let's disect it!
 
-What happens if the range is from (5, 5)?  How about from (10, 6)?  Try different step sizes: (10, 6, -1), (1, 10, 2). Write down all your observations and answer the following questions.
+What happens if the range is from (5, 5)?  How about from (10, 6)?  Try different step 
+sizes: (10, 6, -1), (1, 10, 2). Write down all your observations and answer the following questions.
 
 """
 
@@ -51,5 +57,6 @@ How do you loop through elements in a list using a for loop?
 """
 
 given_list = [10, 20, 30, 40, 50]
-
+for i in range(len(given_list)):
+    print(given_list[i])
 """# Great work! Spend the rest of class doing application problems will be in your HW."""
