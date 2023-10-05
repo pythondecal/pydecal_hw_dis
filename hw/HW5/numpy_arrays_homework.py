@@ -16,8 +16,7 @@ import numpy as np
 # PROBLEM 1: HEY TWIN
 
 """
-Given an arry, find the rows with where all the 
-values are equal. 
+Given an array, find the rows where all the values are equal. 
 """
 def findEqual(arr):
     """
