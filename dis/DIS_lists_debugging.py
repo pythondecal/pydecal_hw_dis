@@ -28,13 +28,22 @@ discounts = {'apple': 0.1, 'banana': 0.05}
 # 4.42
 
 "YOUR CODE HERE"
+def cartPrice(items, prices, deals):
+    total = 0
+    for i in range(len(items)):
+        if items[i] in deals:
+            actual_price = prices[i]*(1-deals.get(items[i]))
+            total += actual_price
+        else:
+            total += prices[i]
+    return round(total, 2)
 
 # Problem 2: Grouping Dictionary Elements
 """
 You are given a list of dictionaries, each containing information about a 
 person, including their name and age. Write a function in Python that groups
-the people by age, returning a dictionary where the keys are the ages, and the 
-values are lists of names belonging to that age group.
+the people by age, returning a dictionary where the keys are the ages, and 
+the values are lists of names belonging to that age group.
 """
 # Example:
 # Input
@@ -47,7 +56,16 @@ people = [
 
 # Output: {30: ['Alice', 'Charlie'], 25: ['Bob', 'David']}
 
-"YOUR CODE HERE"
+def groupByAge(peopleList):
+    peopleDict = {}
+    for i in range(len(peopleList)):
+        curr_age = peopleList[i].get('age')
+        curr_name = peopleList[i].get('name')
+        if curr_age in peopleDict:
+            peopleDict[curr_age].append(curr_name)
+        else:
+            peopleDict[curr_age] = [curr_name]
+    return peopleDict
 
 # Problem 3: Most Frequent Element
 
@@ -64,7 +82,17 @@ numbers = [2, 3, 5, 2, 8, 2, 5, 6, 3, 2, 9, 5]
 
 # Output: (2, 4)
 
-"YOUR CODE HERE"
+def countMax(lis):
+    numTimes = {}
+    for num in lis:
+        if num in numTimes:
+            numTimes[num] = numTimes[num] + 1
+        else:
+            numTimes[num] = 1
+    maxTimes = max(numTimes.values())
+    maxIndex = list(numTimes.values()).index(maxTimes)
+    maxVal = list(numTimes.keys())[maxIndex]
+    return maxVal, maxTimes
 
 
 
@@ -101,16 +129,16 @@ This is the error you get:
 
  # PART 1
 """ What line is your error on? """
-print("The error is on line: ", "YOUR ANSWER HERE")
+print("The error is on line: ", "4") # could also change line 3
 
 # PART 2
 """ Rewrite that line to correct the error
     Please keep the code in quotes!"""
-print("The line should be: ", "YOUR CODE HERE")
+print("The line should be: ", "curr = func(i)") # if you changed line 3: for i in range(len(seq))
 
 
 
-# PROBLEM 2
+# PROBLEM 5
 
 """ 
 Some people on the internet have run into problems with their code.
@@ -139,15 +167,15 @@ But instead you get:
 
 # PART 1
 """ What line is your error on? """
-print("The error is on line: ", "YOUR ANSWER HERE")
+print("The error is on line: ", "4")
 
 # PART 2
 """ Rewrite that line to correct the error
     Please keep the code in quotes!"""
-print("The line should be: ", "YOUR CODE HERE")
+print("The line should be: ", "scores = [int(percent * max_score) for percent in percentages]")
 
 
-# PROBLEM 3
+# PROBLEM 6
 
 """
 You wrote some code for class but you have run into an unexpected output.
@@ -179,4 +207,8 @@ patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
 def calculate_bmi(weight, height):
     return weight / (height ** 2)
 
-"YOUR CODE HERE"
+for patient in patients:
+    weight, height = patient[0], patient[1]
+    bmi = calculate_bmi(weight, height)
+    print(f"Patient's BMI is: {bmi}")
+
