@@ -12,12 +12,14 @@ import numpy as np
 
 def reverseArray(arr):
     """
-    >>> myArr = np.random.random(16)
+     >>> np.random.seed(12345)
+    >>> myArr = np.random.randint(0, 10, size=(9))
+    >>> myArr
+    array([2, 5, 1, 4, 9, 5, 2, 1, 6])
     >>> reverseArray(myArr)
-    array([[0.99145874, 0.25070908, 0.18436908, 0.70286743],
-       [0.08599012, 0.33552297, 0.61514196, 0.19393074],
-       [0.74513446, 0.90204978, 0.95634375, 0.98563639],
-       [0.30663176, 0.03018382, 0.62689752, 0.99972597]])]])
+    array([[6, 1, 2],
+           [5, 9, 4],
+           [1, 5, 2]]
 
     >>> badLength = np.random.random(6)
     >>> reverseArray(badLength)
